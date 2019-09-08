@@ -53,7 +53,7 @@ setTimeout(() => {
   }, 1000 / 10)
   setInterval(() => {
     const newY = 20 * (1 - (Environment.getInstance().temp - MIN_TEMP) / (MAX_TEMP - MIN_TEMP))
-    if (newY <= -10) return
+    if (newY <= -10 || newY === Infinity) return
     const translation = [{ value: `translate(0 ${prevY})` }, { value: `translate(0 ${newY})` }]
     prevY = newY
 
@@ -65,3 +65,32 @@ setTimeout(() => {
     })
   }, 300)
 }, START_UP_DURATION)
+
+function minChanged(ele) {
+  if (event.key === 'Enter') {
+    const value = ele.value
+    const intVal = parseInt(value)
+    if (isNaN(intVal)) {
+      ele.value = MIN_TEMP
+    } else if (intVal >= MAX_TEMP) {
+      ele.value = MAX_TEMP
+      MIN_TEMP = MAX_TEMP
+    } else MIN_TEMP = intVal
+    ele.blur()
+    console.log('ok')
+  }
+}
+
+function maxChanged(ele) {
+  if (event.key === 'Enter') {
+    const value = ele.value
+    const intVal = parseInt(value)
+    if (isNaN(intVal)) {
+      ele.value = MAX_TEMP
+    } else if (intVal <= MIN_TEMP) {
+      ele.value = MIN_TEMP
+      MAX_TEMP = MIN_TEMP
+    } else MAX_TEMP = intVal
+    ele.blur()
+  }
+}

@@ -1,6 +1,6 @@
 #thermo-control {
   width: 100%;
-  height: 30%;
+  height: 10vh;
   position: relative;
   font-size: 1.2em;
 }
@@ -35,4 +35,32 @@
   right: 30%;
   color: #fff;
   font-size: 2em;
+}
+
+#temp-min {
+  position: absolute;
+  top: 15%;
+  left: 35%;
+  transform: translateX(-50%);
+  font-size: 2em;
+  background: transparent;
+  border: none;
+  color: #fff;
+  width: 50px;
+}
+
+#temp-max {
+  position: absolute;
+  top: 15%;
+  right: 35%;
+  transform: translateX(50%);
+  font-size: 2em;
+  background: transparent;
+  border: none;
+  color: #fff;
+  width: 50px;
+}
+
+.minmax {
+  width: 20px;
 }
