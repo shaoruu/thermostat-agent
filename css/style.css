@@ -1,0 +1,237 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Patrick Hand SC', cursive;
+}
+
+/* center in the viewport */
+body {
+  min-height: 100vh;
+  background: #11072a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#title {
+  color: #fff;
+  margin-bottom: 5vh;
+  font-weight: 200;
+  font-size: 5em;
+  text-align: center;
+}
+
+#thermo-wrapper {
+  margin-bottom: 5vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+input[type='range'] {
+  outline: 0;
+  border-radius: 500px;
+  width: 200px;
+  max-width: 100%;
+  margin: 24px 0;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input[type='range'] {
+    overflow: hidden;
+    height: 40px;
+    -webkit-appearance: none;
+    background-color: #ddd;
+  }
+  input[type='range']::-webkit-slider-runnable-track {
+    height: 40px;
+    -webkit-appearance: none;
+    color: #444;
+    margin-top: -1px;
+    transition: box-shadow 0.2s ease-in-out;
+  }
+  input[type='range']::-webkit-slider-thumb {
+    width: 40px;
+    -webkit-appearance: none;
+    height: 40px;
+    cursor: ew-resize;
+    background: #fff;
+    box-shadow: -340px 0 0 320px #1597ff, inset 0 0 0 40px #1597ff;
+    border-radius: 50%;
+    transition: box-shadow 0.2s ease-in-out;
+    position: relative;
+  }
+  input[type='range']:active::-webkit-slider-thumb {
+    background: #fff;
+    box-shadow: -340px 0 0 320px #1597ff, inset 0 0 0 3px #1597ff;
+  }
+}
+
+input[type='range']::-moz-range-progress {
+  background-color: #43e5f7;
+}
+input[type='range']::-moz-range-track {
+  background-color: #9a905d;
+}
+
+input[type='range']::-ms-fill-lower {
+  background-color: #43e5f7;
+}
+input[type='range']::-ms-fill-upper {
+  background-color: #9a905d;
+}
+
+.mid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1em;
+}
+
+/* Switch starts here */
+.rocker {
+  display: inline-block;
+  position: relative;
+  /*
+  SIZE OF SWITCH
+  ==============
+  All sizes are in em - therefore
+  changing the font-size here
+  will change the size of the switch.
+  See .rocker-small below as example.
+  */
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  color: #888;
+  width: 7em;
+  height: 4em;
+  overflow: hidden;
+  border-bottom: 0.5em solid #eee;
+  font-size: 1.2em;
+}
+
+.rocker-small {
+  font-size: 0.75em; /* Sizes the switch */
+  margin: 1em;
+}
+
+.rocker::before {
+  content: '';
+  position: absolute;
+  top: 0.5em;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #999;
+  border: 0.5em solid #eee;
+  border-bottom: 0;
+}
+
+.rocker input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-left,
+.switch-right {
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5em;
+  width: 3em;
+  transition: 0.2s;
+}
+
+.switch-left {
+  height: 2.4em;
+  width: 2.75em;
+  left: 0.85em;
+  bottom: 0.4em;
+  background-color: #ddd;
+  transform: rotate(15deg) skewX(15deg);
+}
+
+.switch-right {
+  right: 0.5em;
+  bottom: 0;
+  background-color: #bd5757;
+  color: #fff;
+}
+
+.switch-left::before,
+.switch-right::before {
+  content: '';
+  position: absolute;
+  width: 0.4em;
+  height: 2.45em;
+  bottom: -0.45em;
+  background-color: #ccc;
+  transform: skewY(-65deg);
+}
+
+.switch-left::before {
+  left: -0.4em;
+}
+
+.switch-right::before {
+  right: -0.375em;
+  background-color: transparent;
+  transform: skewY(65deg);
+}
+
+input[type='checkbox']:checked + .switch-left {
+  background-color: #0084d0;
+  color: #fff;
+  bottom: 0px;
+  left: 0.5em;
+  height: 2.5em;
+  width: 3em;
+  transform: rotate(0deg) skewX(0deg);
+}
+
+input[type='checkbox']:checked + .switch-left::before {
+  background-color: transparent;
+  width: 3.0833em;
+}
+
+input[type='checkbox']:checked + .switch-left + .switch-right {
+  background-color: #ddd;
+  color: #888;
+  bottom: 0.4em;
+  right: 0.8em;
+  height: 2.4em;
+  width: 2.75em;
+  transform: rotate(-15deg) skewX(-15deg);
+}
+
+input[type='checkbox']:checked + .switch-left + .switch-right::before {
+  background-color: #ccc;
+}
+
+/* Keyboard Users */
+input[type='checkbox']:focus + .switch-left {
+  color: #333;
+}
+
+input[type='checkbox']:checked:focus + .switch-left {
+  color: #fff;
+}
+
+input[type='checkbox']:focus + .switch-left + .switch-right {
+  color: #fff;
+}
+
+input[type='checkbox']:checked:focus + .switch-left + .switch-right {
+  color: #333;
+}

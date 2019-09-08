@@ -15,6 +15,8 @@ public:
   double incrTemp(double inc);
   double decrTemp(double dec);
 
+  void update();
+
   double getTemp();
 };
 #endif

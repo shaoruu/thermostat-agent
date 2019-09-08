@@ -1,0 +1,38 @@
+#thermo-control {
+  width: 100%;
+  height: 30%;
+  position: relative;
+  font-size: 1.2em;
+}
+
+#thermo-control > * {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#temp-range {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#temp-range-percentage {
+  color: #fff;
+}
+
+#thermo-ac-indicator {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+}
+
+#thermo-temp {
+  position: absolute;
+  top: 45%;
+  right: 30%;
+  color: #fff;
+  font-size: 2em;
+}

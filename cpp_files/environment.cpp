@@ -23,4 +23,8 @@ double Environment::decrTemp(double dec)
   return temperature;
 }
 
+void Environment::update()
+{
+}
+
 double Environment::getTemp() { return temperature; }
