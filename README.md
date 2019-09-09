@@ -1,1 +1,1 @@
-# Thermometer Agent
+# Thermostat Agent

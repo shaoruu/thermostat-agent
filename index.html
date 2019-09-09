@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Thermometer</title>
+    <title>Thermostat Agent</title>
 
     <link rel="icon" href="https://image.flaticon.com/icons/png/512/263/263933.png" />
     <link rel="stylesheet" href="css/style.css" />
@@ -27,7 +27,7 @@
     ></script>
   </head>
   <body>
-    <h1 id="title">Thermometer Agent</h1>
+    <h1 id="title">Thermostat Agent</h1>
     <div id="thermo-wrapper">
       <div id="thermo-ac-indicator" class="mid">
         <label class="rocker">
@@ -121,12 +121,22 @@
     </div>
 
     <div id="thermo-control">
-      <input id="temp-min" contenteditable="true" value="20" onkeydown="minChanged(this)" />
+      <input
+        id="temp-min"
+        contenteditable="true"
+        value="20"
+        onkeydown="minChanged(this)"
+      />
       <div id="temp-range">
         <input id="temp-range-input" type="range" value="50" />
         <h4 id="temp-range-percentage">AC Strength: 50%</h4>
       </div>
-      <input id="temp-max" contenteditable="true" value="30" onkeydown="maxChanged(this)" />
+      <input
+        id="temp-max"
+        contenteditable="true"
+        value="30"
+        onkeydown="maxChanged(this)"
+      />
     </div>
 
     <script src="js/config.js"></script>
