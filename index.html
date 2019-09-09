@@ -121,22 +121,30 @@
     </div>
 
     <div id="thermo-control">
-      <input
-        id="temp-min"
-        contenteditable="true"
-        value="20"
-        onkeydown="minChanged(this)"
-      />
+      <div id="temp-min-wrapper">
+        <input
+          id="temp-min"
+          contenteditable="true"
+          value="20"
+          onkeydown="minChanged(this)"
+        />
+        <h4>Min Temp</h4>
+      </div>
+
       <div id="temp-range">
         <input id="temp-range-input" type="range" value="50" />
         <h4 id="temp-range-percentage">AC Strength: 50%</h4>
       </div>
-      <input
-        id="temp-max"
-        contenteditable="true"
-        value="30"
-        onkeydown="maxChanged(this)"
-      />
+
+      <div id="temp-max-wrapper">
+        <input
+          id="temp-max"
+          contenteditable="true"
+          value="30"
+          onkeydown="maxChanged(this)"
+        />
+        <h4>Max Temp</h4>
+      </div>
     </div>
 
     <script src="js/config.js"></script>

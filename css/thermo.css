@@ -19,7 +19,7 @@
   transform: translateX(-50%);
 }
 
-#temp-range-percentage {
+h4 {
   color: #fff;
 }
 
@@ -37,11 +37,17 @@
   font-size: 2em;
 }
 
-#temp-min {
+#temp-min-wrapper {
   position: absolute;
   top: 15%;
   left: 35%;
   transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#temp-min {
   font-size: 2em;
   background: transparent;
   border: none;
@@ -49,11 +55,17 @@
   width: 50px;
 }
 
-#temp-max {
+#temp-max-wrapper {
   position: absolute;
   top: 15%;
   right: 35%;
   transform: translateX(50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#temp-max {
   font-size: 2em;
   background: transparent;
   border: none;
